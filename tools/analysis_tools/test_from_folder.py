@@ -85,7 +85,7 @@ def main():
             ignore_index=0,
             output_dir=None,
             save_metric=True),
-        dict(type='JacobianMetric', metrics=['jdet'], output_dir=None),
+        dict(type='JacobianMetric', metrics=['npj'], output_dir=None),
         dict(type='SurfaceDistanceMetric', ignore_index=0, output_dir=None),
     ]
 

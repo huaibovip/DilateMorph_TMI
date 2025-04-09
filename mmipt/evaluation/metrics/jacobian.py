@@ -41,7 +41,7 @@ class JacobianMetric(BaseMetric):
     """
 
     def __init__(self,
-                 metrics: List[str] = ['jdet'],
+                 metrics: List[str] = ['npj'],
                  percent: bool = True,
                  nan_to_num: Optional[int] = None,
                  output_dir: Optional[str] = None,
@@ -55,9 +55,9 @@ class JacobianMetric(BaseMetric):
         if isinstance(metrics, str):
             metrics = [metrics]
 
-        if not set(metrics).issubset({'jdet', 'sdlogj'}):
+        if not set(metrics).issubset({'npj', 'sdlogj'}):
             raise KeyError(f'metrics {metrics} is not supported. '
-                           f'Only supports "jdet" and "sdlogj".')
+                           f'Only supports "npj" and "sdlogj".')
 
         self.metrics = metrics
         self.percent = 100 if percent else 1
@@ -83,8 +83,7 @@ class JacobianMetric(BaseMetric):
             data_batch (dict): A batch of data from the dataloader.
             data_samples (Sequence[dict]): A batch of outputs from the model.
         """
-        metric_func = dict(
-            jdet=self.jacobian_determinant, sdlogj=self.jacobian_sdlogj)
+        metric_func = dict(npj=self.jacobian_npj, sdlogj=self.jacobian_sdlogj)
         for data_sample in data_samples:
             # format_only always for test dataset without ground truth
             if not self.format_only:
@@ -133,8 +132,8 @@ class JacobianMetric(BaseMetric):
 
         ret = dict()
         for name in self.metrics:
-            jdet = [result[name] for result in results]
-            res = np.stack(jdet, axis=0)
+            res = [result[name] for result in results]
+            res = np.stack(res, axis=0)
             ret.update({
                 f'{name.title()}': np.nanmean(res),
                 f'{name.title()}_std': np.nanstd(res),
@@ -152,8 +151,8 @@ class JacobianMetric(BaseMetric):
         return ret
 
     @staticmethod
-    def jacobian_determinant(flow: torch.Tensor,
-                             percent: float = 100.) -> Dict[str, float]:
+    def jacobian_npj(flow: torch.Tensor,
+                     percent: float = 100.) -> Dict[str, float]:
         """Calculate jacobian determinant of a displacement field.
 
         Args:
@@ -191,10 +190,10 @@ class JacobianMetric(BaseMetric):
         jac_dets = jac_dets.cpu().detach().numpy()
 
         result = dict(
-            jdet=np.sum(jac_dets <= 0) / np.prod(vol_shape) * percent,
-            jdet_negative=np.mean(jac_dets <= 0),
-            jdet_mean=np.mean(jac_dets),
-            jdet_var=np.var(jac_dets),
+            npj=np.sum(jac_dets <= 0) / np.prod(vol_shape) * percent,
+            # npj_negative=np.mean(jac_dets <= 0),
+            # npj_mean=np.mean(jac_dets),
+            # npj_var=np.var(jac_dets),
         )
 
         return result

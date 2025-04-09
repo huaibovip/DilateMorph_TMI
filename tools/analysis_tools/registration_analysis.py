@@ -172,7 +172,7 @@ if __name__ == '__main__':
         |  ├─transmorph
         |  │  ├─asd_transmorph_ixi_atlas-to-scan.csv
         │  |  ├─hd95_transmorph_ixi_atlas-to-scan.csv
-        │  |  ├─jdet_transmorph_ixi_atlas-to-scan.csv
+        │  |  ├─npj_transmorph_ixi_atlas-to-scan.csv
         │  |  ├─mdice_transmorph_ixi_atlas-to-scan.csv
         |  |  └─...
         │  ├─fouriernet
@@ -189,7 +189,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     metric = args.metric.lower()
-    assert metric in ['mdice', 'asd', 'hd95', 'jdet', 'sdlogj']
+    assert metric in ['mdice', 'asd', 'hd95', 'npj', 'sdlogj']
     data_root = osp.join(args.root, args.dataset)
 
     exp_cfgs = dict()
@@ -198,7 +198,7 @@ if __name__ == '__main__':
         exp_cfgs[model_name] = csv_path
         print('{0:>20}: {1}'.format(model_name, osp.basename(csv_path)))
 
-    if args.metric in ['jdet', 'sdlogj']:
+    if args.metric in ['npj', 'sdlogj']:
         measure2(metric, exp_cfgs)
     else:
         outstructs, datas, metrics = measure(

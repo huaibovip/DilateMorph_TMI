@@ -128,6 +128,6 @@ test_evaluator = [
         # output_dir='./work_dirs/oasis3d/submission/task_03',
         format_only=False,
         save_metric=True),
-    dict(type='JacobianMetric', metrics=['jdet', 'sdlogj'], output_dir=None),
+    dict(type='JacobianMetric', metrics=['npj', 'sdlogj'], output_dir=None),
     dict(type='SurfaceDistanceMetric', ignore_index=0, output_dir=None),
 ]
