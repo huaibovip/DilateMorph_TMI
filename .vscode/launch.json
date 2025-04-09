@@ -1,0 +1,102 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "tools/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py",
+                "--work-dir", "work_dirs/transmorph_ixi_atlas-to-scan",
+                // "--amp",
+            ]
+        },
+        {
+            "name": "test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "tools/test.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py",
+                "work_dirs/transmorph_ixi_atlas-to-scan/best_mDice_epoch_xxx.pth",
+                "--work-dir", "work_dirs/transmorph_ixi_atlas-to-scan",
+            ]
+        },
+        {
+            "name": "test_folder",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "tools/analysis_tools/test_from_folder.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "-1",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "--data-root", "data/test_folder_ixi",
+                "--data-type", "abdomenmrct3d_4",
+                "--experiment-name", "model_ixi_atlas-to-scan",
+            ]
+        },
+        {
+            "name": "resume",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "tools/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py",
+                "--resume",
+            ]
+        },
+        {
+            "name": "config",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "tools/analysis_tools/print_config.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "-1",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py",
+            ]
+        },
+        {
+            "name": "debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py",
+            ]
+        },
+    ]
+}

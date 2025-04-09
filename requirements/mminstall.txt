@@ -1,0 +1,2 @@
+mmcv-lite>=2.0.0
+mmengine>=0.4.0

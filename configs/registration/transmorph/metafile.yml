@@ -1,0 +1,18 @@
+Collections:
+- Name: TransMorph
+  Paper:
+    Title: 'TransMorph: Transformer for unsupervised medical image registration'
+    URL: https://arxiv.org/abs/2111.10480
+  README: configs/transmorph/README.md
+  Task:
+  - registration
+  Year: 2022
+Models:
+- Config: configs/transmorph/transmorph_swin_ixi-160x192x224.py
+  In Collection: TransMorph
+  Name: transmorph_swin_ixi
+  Results:
+  - Dataset: '-'
+    Metrics: {}
+    Task: Registration
+  Weights: https://download.openxlab.org.cn/models/Masbfca/AnimateDiff/weight/toonyou_beta3.safetensors
