@@ -18,10 +18,7 @@ nb_features = [
 model = dict(
     backbone=dict(img_size=img_size, nb_unet_features=nb_features),
     flow=dict(in_channels=nb_features[-1][-1]),
-    head=dict(
-        img_size=img_size,
-        loss_sim=dict(type='MSELoss'),
-        loss_reg=dict(loss_weight=0.01)),
+    head=dict(img_size=img_size),
 )
 
 param_scheduler = None

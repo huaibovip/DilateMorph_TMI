@@ -1,5 +1,4 @@
 requests
-click  # required by mmipt/utils/io_utils.py
 einops
 scipy
 numpy
@@ -11,10 +10,7 @@ numpy
 opencv-python!=4.5.5.62,!=4.5.5.64
 Pillow
 tensorboard
-# transformers>=4.27.4
 prettytable
 
 imageio
 nibabel
-# neurite
-# SimpleITK
