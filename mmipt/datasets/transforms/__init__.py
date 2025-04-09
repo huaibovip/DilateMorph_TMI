@@ -1,4 +1,5 @@
 # Copyright (c) MMIPT. All rights reserved.
+from .flip import RandomFlip
 from .formatting import InjectMeta, PackInputs
 from .loading import (LoadBundleVolumeFromFile, LoadImageFromFile,
                       LoadPairedImageFromFile, LoadQuadVolumeFromFile,
@@ -8,6 +9,7 @@ from .segmentation import (IXISegmentNormalize, LPBASegmentNormalize,
 from .values import CopyValues, SetValues
 
 __all__ = [
+    'RandomFlip',
     'InjectMeta',
     'PackInputs',
     'LoadBundleVolumeFromFile',

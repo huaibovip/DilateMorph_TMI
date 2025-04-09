@@ -3,14 +3,12 @@ from abc import abstractmethod
 from typing import Optional, Sequence, Union
 
 import torch
-from mmengine.logging import print_log
 from mmengine.model import BaseModule
 from mmengine.structures import BaseDataElement
 from torch import Tensor
 from torch.nn import functional as F
 
-from mmipt.models.utils import (Warp, flow_denorm, generate_grid,
-                                optimize_instance_api)
+from mmipt.models.utils import Warp, flow_denorm, generate_grid
 from mmipt.structures.data_sample import DataSample
 from mmipt.utils import SampleInputs, TensorDict, to_channel_first
 
