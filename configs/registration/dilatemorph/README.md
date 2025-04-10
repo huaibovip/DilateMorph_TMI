@@ -2,6 +2,7 @@
 
 > [DilateMorph]()
 
+The implementation of DilateMorph is released soon
 
 ## Abstract
 
@@ -12,7 +13,7 @@ DilateMorph
 <!-- [IMAGE] -->
 
 <div align=center>
-<img src="" width="70%" target="_blank"/>
+<img src="../../../docs/imgs/dilatemorph.png" width="70%" target="_blank"/>
 </div>
 
 ## Results and models

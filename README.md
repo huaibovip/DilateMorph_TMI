@@ -27,8 +27,6 @@ CUDA_VISIBLE_DEVICES=-1 python tools/train.py configs/registration/transmorph/tr
 # single-gpu train
 python tools/train.py configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py
 
-# multi-gpu train
-./tools/dist_train.sh configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py 4
 ```
 </details>
 
@@ -44,8 +42,6 @@ CUDA_VISIBLE_DEVICES=-1 python tools/test.py configs/registration/transmorph/tra
 # single-gpu test
 python tools/test.py configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py path/to/checkpoint.pth
 
-# multi-gpu test
-./tools/dist_test.sh configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py path/to/checkpoint.pth 4
 ```
 </details>
 
