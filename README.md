@@ -80,8 +80,7 @@ python tools/test.py configs/registration/transmorph/transmorph_ixi_atlas-to-sca
 │   │   └── wrappers.py                     Less commonly used here. Customize your wrapper here.
 │   ├── __init__.py
 │   ├── registry.py
-│   ├── version.py
-|   ```
+│   └── version.py
 ├── tools                                   General train/test script
 ```
 </details>
