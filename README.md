@@ -9,6 +9,7 @@
 2. Install MMIPT
    ```bash
    pip install -r requirements.txt
+   pip install -e .
    ```
 
 
@@ -56,8 +57,6 @@ python tools/test.py configs/registration/transmorph/transmorph_ixi_atlas-to-sca
 
 ```bash
 ├── configs                                 Commonly used base config file.
-├── demo
-│   ├── mmipt_demo.py           General demo script
 ├── mmipt
 │   ├── datasets
 │   │   ├── __init__.py
@@ -74,17 +73,15 @@ python tools/test.py configs/registration/transmorph/transmorph_ixi_atlas-to-sca
 │   │   ├── __init__.py
 │   │   ├── evaluator.py                    Less commonly used. Customize your evaluator here
 │   │   └── metrics.py                      Customize your metric here.
-│   ├── infer
-│   │   ├── inference.py                    Used for demo script. Customize your inferencer here
-│   │   └── __init__.py
-│   ├── __init__.py
 │   ├── models
 │   │   ├── __init__.py
 │   │   ├── model.py                        Customize your model here.
 │   │   ├── weight_init.py                  Less commonly used here. Customize your initializer here.
 │   │   └── wrappers.py                     Less commonly used here. Customize your wrapper here.
+│   ├── __init__.py
 │   ├── registry.py
-│   └── version.py
+│   ├── version.py
+|   ```
 ├── tools                                   General train/test script
 ```
 </details>
