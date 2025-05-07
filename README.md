@@ -1,11 +1,9 @@
 # DilateMorph: A Dual-Stream Transformer with Multi-Dilation Cross-Attention for Medical Image Registration
 
- <img src="docs/imgs/dilatemorph.png" width = "800"  align=center />  
- 
- </br>
-
- <img src="docs/imgs/dilatemorph_mdca.png" width = "800"  align=center />
-
+<div align=center>
+<img src="./docs/imgs/dilatemorph.png" width="70%" target="_blank"/>
+<img src="./docs/imgs/dilatemorph_mdca.png" width="70%" target="_blank"/>
+</div>
 
 ## Installation
 
