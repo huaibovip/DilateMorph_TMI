@@ -1,11 +1,15 @@
 # DilateMorph: A Dual-Stream Transformer with Multi-Dilation Cross-Attention for Medical Image Registration
 
- <img src="docs/imgs/dilatemorph.png" width = "800"  align=center />
+ <img src="docs/imgs/dilatemorph.png" width = "800"  align=center />  
+ 
+ </br>
+
+ <img src="docs/imgs/dilatemorph_mdca.png" width = "800"  align=center />
 
 
 ## Installation
 
-1. Follow the [official guide](https://pytorch.org/get-started/locally/) to install PyTorch.
+1. Follow the [official guide](https://pytorch.org/get-started/previous-versions/) to install PyTorch 2.1.2.
 2. Install MMIPT
    ```bash
    pip install -r requirements.txt
@@ -15,10 +19,7 @@
 
 ## Quick Start
 
-<details>
-<summary>Train Instructions</summary>
-
-You can use the following commands to train a model with cpu or single/multiple GPUs.
+Train Instructions
 
 ```shell
 # cpu train
@@ -28,12 +29,8 @@ CUDA_VISIBLE_DEVICES=-1 python tools/train.py configs/registration/transmorph/tr
 python tools/train.py configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py
 
 ```
-</details>
 
-<details>
-<summary>Test Instructions</summary>
-
-You can use the following commands to test a model with cpu or single/multiple GPUs.
+Test Instructions
 
 ```shell
 # cpu test
@@ -43,7 +40,6 @@ CUDA_VISIBLE_DEVICES=-1 python tools/test.py configs/registration/transmorph/tra
 python tools/test.py configs/registration/transmorph/transmorph_ixi_atlas-to-scan_160x192x224.py path/to/checkpoint.pth
 
 ```
-</details>
 
 
 ## Directory structure
@@ -88,9 +84,9 @@ python tools/test.py configs/registration/transmorph/transmorph_ixi_atlas-to-sca
 @Article{paper,
   title = {DilateMorph: A Dual-Stream Transformer with Multi-Dilation Cross-Attention for Medical Image Registration},
   author = {},
-  journal = {},
-  volume = {},
-  pages = {},
-  year = {},
 }
 ```
+  <!-- journal = {},
+  volume = {},
+  pages = {},
+  year = {}, -->
