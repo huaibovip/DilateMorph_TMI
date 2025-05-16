@@ -81,7 +81,8 @@ python tools/test.py configs/registration/transmorph/transmorph_ixi_atlas-to-sca
 ```bibtex
 @Article{paper,
   title = {DilateMorph: A Dual-Stream Transformer with Multi-Dilation Cross-Attention for Medical Image Registration},
-  author = {},
+  author = {Huaibo Hao, Deqiang Xiao, Yucong Lin, Danni Ai, Jingfan Fan, Tianyu Fu, Hong Song, and Jian Yang},
+  year = {2025},
 }
 ```
   <!-- journal = {},
